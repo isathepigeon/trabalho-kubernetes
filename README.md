@@ -18,7 +18,9 @@ Each server has its own Deployment (2 replicas, for redundancy and scalability*)
 <img width="600" height="467" alt="image" src="https://github.com/user-attachments/assets/1d99b3df-f758-417d-966f-15af40f19511" />
 
 *Redundancy here essentially means having a fallback: if one pod goes down, the other keeps serving requests while Kubernetes spins up a replacement, so the website stays online.
+
 *Scalability here is horizontal: if needed, we can increase the number of pods instead of adding computing power to a single machine.
+
 *Alpine is a Linux distribution (distro) widely used in containers because it is very lightweight (~5 MB).
 
 ## Repository structure
