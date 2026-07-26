@@ -73,6 +73,7 @@ kubectl scale deployment nginx-deployment --replicas=4
 
 ## Technical decisions
 
+- Native Docker Engine, no Docker Desktop: since the development environment was already Linux, Docker was installed directly on the system (Docker Engine), with no need for Docker Desktop. On Windows and macOS, Docker Desktop is practically mandatory because those systems don't have a Linux kernel and must run Docker inside a virtual machine. On Linux, containers use the system's own kernel, so there's no need for an intermediate VM. The result is a lighter setup, with lower resource usage and fewer points of failure. Also for my learning purpose, it's exactly the model used on production servers.
 - **Alpine** — minimal base images (~5 MB), as described above, reducing image size, deploy time and attack surface (the "optimized images" requirement).
 - **2 replicas per service** — demonstrate redundancy, self-healing and independent scaling.
 - **NodePort + port-forward** — expose the services on the exact ports required by the challenge (8080/8081), which is ideal for a local academic setup.
