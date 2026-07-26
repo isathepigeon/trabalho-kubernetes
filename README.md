@@ -14,6 +14,7 @@ Academic project based on the challenge of the fictional company Web Solutions L
 ```
 
 Each server has its own Deployment (2 replicas, for redundancy and scalability*) and a Service of type NodePort (stable address + load balancing). The images are built from optimized official bases (nginx:alpine, httpd:alpine) and serve a custom HTML page.
+
 <img width="600" height="467" alt="image" src="https://github.com/user-attachments/assets/1d99b3df-f758-417d-966f-15af40f19511" />
 
 *Redundancy here essentially means having a fallback: if one pod goes down, the other keeps serving requests while Kubernetes spins up a replacement, so the website stays online.
