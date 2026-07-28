@@ -14,7 +14,7 @@ A grande parte do Kubernetes que permite que ele seja mais reliable do que o Doc
 
 Um node inteiro pode tambem ser destruido em caso de falha de rede ou de hardware.
 
-Como proof of concept, eu coloquei dois servidores web — Nginx e Apache — rodando de forma independente no mesmo cluster."
+Como proof of concept, eu coloquei dois servidores web Nginx e Apache rodando de forma independente no mesmo cluster.
 
 Quando eu digo de forma independente eu falo em relacao ao service entao as portas estao separadas, o deployment e os labels estao separados mas como eu usei aqui o minikube na realidade vai ser um node so. Se a gente tivesse em um ambiente de multiplos nodes normalmente o scheduler espalha entre nodes diferentes por uma questao logica de que um node pode cair por uma falha de rede ou de hardware e ai o kubernetes pode substituir esse worker node.
 
@@ -60,4 +60,4 @@ Depois escrevi quatro manifestos: um Deployment e um Service pro Nginx, um deplo
 
 ## Conclusão
 
-Concluindo: o YAML funciona como uma linguagem de contrato entre o programador e os containers e essa solucao eh muito mais reliant, stable e scalable do que uma VM inteira. Obrigada!"
+Concluindo: o YAML funciona como uma linguagem de contrato entre o programador e os containers e essa solucao eh muito mais reliant, stable e scalable do que uma VM inteira. Obrigada!
