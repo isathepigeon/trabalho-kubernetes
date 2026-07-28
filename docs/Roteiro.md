@@ -44,14 +44,14 @@ Voce tem o Debian que e a distro mais antiga, a Ubuntu que e user friendly, a Fe
 o Nginx e o Apache sao aplicacoes que funcionam como webservers e vao ficar fazendo o trafego de informacoes e o load balancing, o Apache inclusive eh httpd onde o D eh de Deamon eh o nome que se da pra aplicacoes que trabalham no background sem interacao do usuario.
 
 Fiz o build das imagens `webso-nginx` e `webso-apache` dentro do ambiente do Minikube.
-![[Pasted image 20260728112356.png]]
+![Pasted image 20260728112356.png](Pasted%20image%2020260728112356.png)
 
 FROM httpd:alpine
 COPY index.html /usr/local/apache2/htdocs/index.html
 
-![[Pasted image 20260728112601.png]]
+![Pasted image 20260728112601.png](Pasted%20image%2020260728112601.png)
 
-![[Pasted image 20260728112631.png]]
+![Pasted image 20260728112631.png](Pasted%20image%2020260728112631.png)
 
 
 Depois escrevi quatro manifestos: um Deployment e um Service pro Nginx, um deployment e um Service pro Apache. Os Deployments declaram duas réplicas de cada aplicação na parte do key value pair spec: 2. Os Services são do tipo NodePort: o Nginx exposto na porta 8080 e o Apache na 8081, ca gente ta fazendo aqui um portfoward pra dizer onde minha aplicacao isinha a braba deve ser exposta ,em qual porta mas eh importante salientar que isso nao eh igual a um portfowarding de networking quando voce tem um doublenat, aqui e so o nome que se da ao ato de especificar em qual porta voce vai encontrar qual servicoe. entao aqui o 8080 eh o Apache rosa choque com brilhinhos, e o Nginx roxinho com brilhinhos na porta 8081.
